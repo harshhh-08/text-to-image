@@ -39,6 +39,8 @@ function App() {
       setError("API Token is not configured. Please add VITE_HF_TOKEN to your environment variables.");
       return;
     }
+
+    setIsGenerating(true);
     setGeneratedImage(null);
     setError(null);
 
