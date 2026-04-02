@@ -33,8 +33,11 @@ function App() {
 
   const handleGenerate = async () => {
     if (!prompt.trim()) return;
-
-    setIsGenerating(true);
+    
+    if (!API_TOKEN) {
+      setError("API Token is not configured. Please add VITE_HF_TOKEN to your environment variables.");
+      return;
+    }
     setGeneratedImage(null);
     setError(null);
 
